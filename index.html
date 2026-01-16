@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Healthcare Support App</title>
+  <link rel="stylesheet" href="style.css">
+
+ 
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("q4tJr3uiGBFxo32CM"); 
+    })();
+  </script>
+</head>
+<body>
+<div class="container">
+  <h2>Healthcare Support Portal</h2>
+  <p class="subtitle">Choose how you want to connect with us</p>
+
+  <div class="button-group">
+    <button onclick="showForm('patient')">Patient Support</button>
+    <button onclick="showForm('volunteer')">Volunteer Registration</button>
+    <button onclick="showForm('general')">General Support</button>
+  </div>
+
+  <form id="patient" class="form-section">
+    <h3>Patient Support</h3>
+    <input type="text" name="name" placeholder="Patient Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="issue" placeholder="Describe the issue" required></textarea>
+    <button type="submit">Submit</button>
+  </form>
+
+  <form id="volunteer" class="form-section">
+    <h3>Volunteer Registration</h3>
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="text" name="skills" placeholder="Skills / Availability" required>
+    <button type="submit">Register</button>
+  </form>
+
+  <form id="general" class="form-section">
+    <h3>General Support</h3>
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" placeholder="Your message" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+
+  <p id="status"></p>
+</div>
+<button id="chatToggleBtn">Chat Support</button>
+
+<div id="chatPanel">
+  <div class="chat-header">
+    <span>Healthcare AI Support</span>
+    <button id="chatCloseBtn">✕</button>
+  </div>
+
+  <iframe
+    src="https://www.chatbase.co/chatbot-iframe/yDFNKPNFEjlLAucmWLAHc"
+    id="chatIframe"
+    frameborder="0"
+    allow="clipboard-write; microphone">
+  </iframe>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
